@@ -6,14 +6,17 @@ import Footer from "./pages/NavAndFooter/Footer";
 import Contact from "./pages/landing/ContactUs/Contact";
 import About from "./pages/landing/aboutPage/About";
 import Landing from "./pages/landing/landingPage/Landing";
-
+// import Product from  "./pages/Product/product"
+import NavListMenu from "./pages/NavAndFooter/Nav"
 
 function App() {
   return (
     <BrowserRouter>
-      {/* <Header /> */}
+       <NavListMenu /> 
+      {/* <Product/> */}
       <Routes>
         <Route element={<Landing />} path="Landing" />
+        <Route path="/" />
         <Route element={<Contact />} path="Contact" />
         <Route element={<About />} path="About" />
       </Routes>
