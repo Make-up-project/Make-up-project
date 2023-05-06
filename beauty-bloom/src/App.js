@@ -1,11 +1,26 @@
 import "./App.css";
-// import Product from "./pages/Product/product";
-import Cart from "./pages/Product/Cart";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from "./pages/NavAndFooter/Footer";
+import Header from "./pages/NavAndFooter/Nav";
+import Contact from "./pages/landing/ContactUs/Contact";
+import About from "./pages/landing/aboutPage/About";
+import Landing from "./pages/landing/landingPage/Landing";
+
+
 function App() {
   return (
-    <div>
-      <Cart/>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route element={<Landing />} path="Landing" />
+        <Route element={<Contact />} path="Contact" />
+        <Route element={<About />} path="About" />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+
+
   );
 }
 
