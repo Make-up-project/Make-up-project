@@ -1,7 +1,7 @@
 .containerCart{
     display: flex;
     width: 80%;
-    margin: 0.5rem auto;
+    margin: 4rem auto;
 }
 .CartSection1{
     margin-right: 5rem;
@@ -37,6 +37,7 @@
 .productCartQuantityC{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-left: 2rem;
     height: 2rem;
 }
@@ -57,7 +58,9 @@
 }
 
 .productCartQuantity button {
-   text-align: top;
+    width: 2rem;
+    height: 2rem;
+   text-align: center;
    }
    
 
@@ -67,7 +70,7 @@
    }
 
    .CartSection2{
- width: 25%;
+ width: 30%;
    }
 
    .CartSection2Price{
@@ -115,4 +118,55 @@
     width: 1rem;
     height: 1rem;
     margin-right: 0.5rem;
+   }
+
+   .priceCancel{
+    display: flex;
+    width: 5rem;
+   }
+
+
+   @media (max-width: 600px){ 
+       .containerCart{
+        width: 100%;  
+        flex-direction: column;
+    }
+    .CartSection1{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .CartSection2{
+        width: 100%;
+    }
+
+
+    .productCartQuantityC{
+     flex-direction: column;
+    }
+
+    .CartProductInfo img{
+        width: 6rem;
+        height: 6rem;
+        margin-right: 0.2rem;
+    }
+
+    .CartProductInfoText p {
+        width: 5rem;
+        margin-bottom: 0.1rem;
+        font-size: small;
+     }
+
+     .s1MyCartInfo{
+        justify-content: c;
+        margin: 0.5rem 0;
+        
+    }
+
+    .CartSection2Price{
+        justify-content: space-around;
+    }
+    .CartSection2Price p{
+        text-align: center;
+    }
+    
    }

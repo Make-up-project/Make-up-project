@@ -6,21 +6,25 @@ import Footer from "./pages/NavAndFooter/Footer";
 import Contact from "./pages/landing/ContactUs/Contact";
 import About from "./pages/landing/aboutPage/About";
 import Landing from "./pages/landing/landingPage/Landing";
-// import Product from  "./pages/Product/product"
+import Product from  "./pages/Product/product"
 import NavListMenu from "./pages/NavAndFooter/Nav"
 import Cart from "./pages/Product/Cart"
 function App() {
   return (
     <BrowserRouter>
-       <Cart /> 
-      {/* <Product/> */}
+       <NavListMenu />  
+     
       <Routes>
-        <Route element={<Landing />} path="Landing" />
+        <Route element={<Landing />} path="/" />
+        <Route element={<Product />} path="Product" />
+
+        <Route element={<Cart />} path="Cart" />
+
         <Route path="/" />
         <Route element={<Contact />} path="Contact" />
         <Route element={<About />} path="About" />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
 
 
