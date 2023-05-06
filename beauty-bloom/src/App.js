@@ -8,11 +8,11 @@ import About from "./pages/landing/aboutPage/About";
 import Landing from "./pages/landing/landingPage/Landing";
 // import Product from  "./pages/Product/product"
 import NavListMenu from "./pages/NavAndFooter/Nav"
-
+import Cart from "./pages/Product/Cart"
 function App() {
   return (
     <BrowserRouter>
-       <NavListMenu /> 
+       <Cart /> 
       {/* <Product/> */}
       <Routes>
         <Route element={<Landing />} path="Landing" />
@@ -20,7 +20,7 @@ function App() {
         <Route element={<Contact />} path="Contact" />
         <Route element={<About />} path="About" />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
 
 

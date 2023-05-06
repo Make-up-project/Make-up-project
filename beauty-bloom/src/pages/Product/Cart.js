@@ -1,7 +1,21 @@
 import React from 'react'
+import { useState } from 'react'
 import "./Cart.css"
 import product0001 from "./images/product0001.jpg"
+import note from "./images/note.png"
+import promo from "./images/promo.png" 
 const Cart = () => {
+const [num,setNum] = useState(1)
+
+function incButton(){
+  setNum(num+1)
+}
+function decButton(){
+  if(num!==0){
+    setNum(num-1)
+  }
+}
+
   return (
     <>
     <div className='containerCart'>
@@ -10,7 +24,7 @@ const Cart = () => {
 
       <div className='s1MyCart'>
         <p>My cart</p>
-        <p>continue shopping</p>
+        <p style={{color:"#96AC73"}}>continue shopping</p>
       </div>
       <hr/>
 
@@ -30,9 +44,9 @@ const Cart = () => {
         <div className='productCartQuantityC'>
         
         <div className='productCartQuantity'>
-            <button style={{width:"2rem"}}>-</button>
-             <input style={{width:"2rem"}} type='number'/>
-            <button style={{width:"2rem"}}>+</button>
+            <button onClick={()=>decButton()} style={{width:"2rem"}}>-</button>
+             <input value={num} style={{width:"2rem"}} type='number'/>
+            <button onClick={()=>incButton()} style={{width:"2rem"}}>+</button>
         </div>
 
         <p>$37.00</p>
@@ -48,12 +62,12 @@ const Cart = () => {
      <div className='promeNoteC'>
     
     <div className='promeNote'>
-        <img/>
-        <p> Enter a promo code</p>
+        <img src={promo} alt=''/>
+        <p style={{color:"#96AC73"}}> Enter a promo code</p>
     </div>
     <div className='promeNote'>
-        <img/>
-        <p> Add a note</p>
+        <img src={note} alt=''/>
+        <p style={{color:"#96AC73"}}> Add a note</p>
     </div>
      
 
@@ -69,8 +83,8 @@ const Cart = () => {
         <hr/>
 
        <div className='CartSection2Price'>
-        <p>subtotal</p>
-        <p>$37.00</p>
+          <p>subtotal</p>
+          <p>$37.00</p>
        </div> 
 
 
@@ -80,13 +94,13 @@ const Cart = () => {
 
 
          <div className='CartSection2Price'>
-        <p>total</p>
-        <p>$37.00</p>
-       </div> 
+            <p>total</p>
+            <p>$37.00</p>
+         </div> 
 
         <div className='paymentButtons'>
           <button className='checkoutButton'>checkout</button>
-          <button className='paypalButton'>paypal   checkout</button>
+          <button className='paypalButton'><span style={{color:"#003087"}}>pay</span><span style={{color:"#009CDE"}}>pal</span>  checkout</button>
         </div>  
 
 
