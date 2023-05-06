@@ -1,12 +1,10 @@
 import "./App.css";
-
-
+import Product from "./pages/Product/product";
+import Cart from "./pages/Product/Cart";
 function App() {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline bg-[#8b5cf6]">
-        Hello world!
-      </h1>
+      <Product/>
     </div>
   );
 }
