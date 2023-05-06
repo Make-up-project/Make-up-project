@@ -1,6 +1,10 @@
 .containerCart{
     display: flex;
 }
+.CartSection1{
+    margin: 0 1rem;
+    width: 65%;
+}
 
 .s1MyCart{
     display: flex;
@@ -13,15 +17,30 @@
 .CartProductInfo img{
     width: 10rem;
 }
+
+
+
 .CartProductInfoText p {
     margin-bottom: 1rem;
 }
 .s1MyCartInfo{
     display: flex;
+    
 }
+
+.productCartQuantityC{
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    height: 2rem;
+}
+
+
 .productCartQuantity{
     display: flex;
     align-items: center;
+    border: 1px solid black;
+    margin: 0.5rem;
 }
 
 .productCartQuantity input {
@@ -33,4 +52,52 @@
 .productCartQuantity button {
    text-align: top;
    }
+   
 
+   .promeNote{
+    display: flex;
+   }
+
+   .CartSection2{
+ width: 25%;
+   }
+
+   .CartSection2Price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+   }
+
+   .paymentButtons{
+    display: flex;
+    flex-direction: column;
+   }
+
+
+   .paymentButtons{
+    display: flex;
+    align-items: center;
+   }
+   .checkoutButton{
+    background-color: red;
+    margin: 0.5rem 0;
+    height: 3rem;
+    width: 70%;
+    border-radius: 0.5rem;
+   }
+
+   .paypalButton{
+    background-color: blue;
+    height: 3rem;
+    width: 70%;
+    border-radius: 0.5rem;
+
+   }
+
+   .secureCheckout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+   }
