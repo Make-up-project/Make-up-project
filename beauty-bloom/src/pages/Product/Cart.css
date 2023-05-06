@@ -1,0 +1,36 @@
+.containerCart{
+    display: flex;
+}
+
+.s1MyCart{
+    display: flex;
+    justify-content: space-between;
+}
+
+.CartProductInfo{
+    display: flex;
+}
+.CartProductInfo img{
+    width: 10rem;
+}
+.CartProductInfoText p {
+    margin-bottom: 1rem;
+}
+.s1MyCartInfo{
+    display: flex;
+}
+.productCartQuantity{
+    display: flex;
+    align-items: center;
+}
+
+.productCartQuantity input {
+ width: 2rem;
+ height: 2rem;
+ border: 1px solid black;
+}
+
+.productCartQuantity button {
+   text-align: top;
+   }
+
