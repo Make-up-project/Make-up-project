@@ -1,29 +1,36 @@
 import React from 'react'
 import { useState } from 'react'
 import "./Cart.css"
-import note from "./images/note.png"
-import promo from "./images/promo.png" 
+
+import { useContext } from 'react'
+import { UserContext } from './ProductContext';
 
 
 const Cart = () => {
-const product_Api = JSON.parse(localStorage.getItem("product_Api"));
-const Quantity0 = JSON.parse(localStorage.getItem("Quantity"));
-const [Quantity,setQuantity] = useState(Number(Quantity0))
-const Price = product_Api.price
-const [num,setNum] = useState(Quantity)
-const image = JSON.parse(localStorage.getItem("image"));
+
+  const { product_Api,updateValueProduct_Api } = useContext(UserContext)
+  const { imgButton,updateValueImgButton } = useContext(UserContext)
+  const { Price,updateValuePrice } = useContext(UserContext)
+  const { Quantity,updateValueQuantity } = useContext(UserContext)
+
+  updateValuePrice(product_Api.price)
+
+
+
+ 
+const [num,setNum] = useState(Number(Quantity))
 const [price,setprice] = useState(Price)
 
 function incButton(){
 
-  setNum(num+1)
-  setQuantity(num+1)
+  setNum(Number(num)+1)
+  updateValueQuantity(Number(num)+1)
 }
 function decButton(){
   if(num!=0){
 
-    setNum(num-1)
-    setQuantity(num-1)
+    setNum(Number(num)-1)
+    updateValueQuantity(Number(num)-1)
   }
     
   
@@ -45,7 +52,7 @@ function decButton(){
        <div className='s1MyCartInfo'>
         
         <div className='CartProductInfo'>
-        <img src={image} alt=''/>
+        <img src={imgButton} alt=''/>
         <div className='CartProductInfoText'>
         <p>Luxury Matte Lipstick</p>
         <p>$<span>{price}</span>.00</p>
@@ -59,7 +66,7 @@ function decButton(){
         
         <div className='productCartQuantity'>
             <button onClick={()=>decButton()} style={{width:"2rem"}}>-</button>
-             <input value={num} style={{width:"2rem"}} type='number'/>
+             <input value={Number(num)} style={{width:"2rem"}} type='number'/>
             <button onClick={()=>incButton()} style={{width:"2rem"}}>+</button>
         </div>
 
@@ -81,21 +88,21 @@ function decButton(){
      <div className='promeNoteC'>
     
     <div className='promeNote'>
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-tags" viewBox="0 0 16 16">
-  <path d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z"/>
-  <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"/>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
+  <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6z" />
 </svg>
+
  
 
 
         <p style={{color:"#96AC73"}}> Enter a promo code</p>
     </div>
     <div className='promeNote'>
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-journal-plus" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5z"/>
-  <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
-  <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
 </svg>
+
         <p style={{color:"#96AC73"}}> Add a note</p>
     </div>
      
@@ -134,9 +141,10 @@ function decButton(){
 
 
         <div className='secureCheckout'>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-shield-lock-fill" viewBox="0 0 16 16">
-             <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5z"/>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+</svg>
+
            <p style={{textAlign:"center",maxWidth:"10rem"}}>secure checkout</p>
         </div>
 
