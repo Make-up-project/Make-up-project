@@ -73,3 +73,78 @@ input{
 .producShades{
     margin: 0.5rem 0;
 }
+
+
+@media (max-width: 600px){
+    .productBox{
+   
+        padding: 0rem;
+        }
+    .productContainer{
+        width: 100%;
+        
+        
+        flex-direction: column;
+        }
+
+        .productSection1{
+            align-items: center;
+        }
+        .productSection2{
+            align-items: center;
+        }
+
+        .addToCartButton{
+            background-color: green;
+            height: 2.5rem;
+            width: 100%;
+            margin:0.5rem 0 ;
+        }
+
+
+        .productNeme{
+            text-align: center;
+        }
+
+      .productPrice{
+        text-align: center;
+      }
+      p{text-align: center;
+     width: 100%;
+    }
+
+
+      .productButtons2{
+        display: flex;
+        justify-content: center;
+       align-items: center;
+        }
+
+
+
+
+
+
+}
+
+@media (max-width: 1100px){
+
+    .productContainer{
+        width: 80%;
+        align-items: start;
+        }
+        .productSection1 img{
+            width: 15rem;
+            }
+            .productNeme{
+                font-size:large;
+                width: 15rem;
+              
+            }
+            p{
+                width: 10rem;
+            }
+
+
+       
+}
