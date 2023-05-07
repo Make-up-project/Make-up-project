@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { Outlet, Link } from 'react-router-dom'
-import product0001 from '../Product/images/product0001.jpg'
-import product0002 from '../Product/images/product0002.jpg'
-import product0003 from '../Product/images/product0003.jpg'
-import product0004 from '../Product/images/product0004.jpg'
-import product0005 from '../Product/images/product0005.jpg'
-import product0006 from '../Product/images/product0006.jpg'
-import product0007 from '../Product/images/product0007.jpg'
-import product0008 from '../Product/images/product0008.jpg'
+import product0001 from './images/product0001.jpg'
+import product0002 from './images/product0002.jpg'
+import product0003 from './images/product0003.jpg'
+import product0004 from './images/product0004.jpg'
+import product0005 from './images/product0005.jpg'
+import product0006 from './images/product0006.jpg'
+import product0007 from './images/product0007.jpg'
+import product0008 from './images/product0008.jpg'
 import "./product.css"
 const Product = () => {
   const [imgButton, setimgButton] = useState(product0001);
