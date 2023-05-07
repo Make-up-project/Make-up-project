@@ -1,27 +1,39 @@
-const StoreCard = () => {
+const StoreCard = (props) => {
   return (
     <div className="flex flex-col bg-white shadow-md rounded-md border border-gray-300 relative">
       <img
-        src="//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/011/original/open-uri20180630-4-ojcehy?1530390366"
-        alt="lippie pencil"
+        src={
+          props.imageURL
+            ? props.imageURL
+            : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
+        }
+        alt={props.name}
         className="w-full rounded-t-md"
       />
       <div className="w-full flex flex-col px-3 pb-6">
-        <span className="text-xl font-semibold">lippie pencil</span>
-        <span className="font-thin">colorpop</span>
-        <span className="mb-6 font-thin text-gray-500">category: pencil</span>
+        <span className="text-xl font-semibold">{props.name}</span>
+        <span className="font-thin">{props.brand}</span>
+        <span className="mb-6 font-thin text-gray-500">
+          category: {props.category}
+        </span>
 
         <span className="text-xl">
-          Price: <span className="font-bold">$20.00 </span>
+          Price: <span className="font-bold">${props.price} </span>
         </span>
-        <span className="mt-3 flex gap-2">
-          <div className="w-4 h-4 rounded-full bg-blue-gray-200"></div>
-          <div className="w-4 h-4 rounded-full bg-pink-300"></div>
-          <div className="w-4 h-4 rounded-full bg-brown-500"></div>
-          <div className="w-4 h-4 rounded-full bg-amber-300"></div>
-          <div className="w-4 h-4 rounded-full bg-yellow-300"></div>
-          <div className="w-4 h-4 rounded-full bg-orange-300"></div>
-          <div className="w-4 h-4 rounded-full bg-red-300"></div>
+        <span className="mt-3 flex gap-2 flex-wrap">
+          {props.availableColors.length !== 0 ? (
+            props.availableColors.map((color) => {
+              return (
+                <div
+                  style={{ backgroundColor: `${color.hex_value}` }}
+                  key={Math.random()}
+                  className={`w-4 h-4 rounded-full`}
+                ></div>
+              );
+            })
+          ) : (
+            <p className="">No available Colors</p>
+          )}
         </span>
       </div>
       <div className="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-pink-100 cursor-pointer flex items-center justify-center">
