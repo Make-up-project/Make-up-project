@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { UserContext } from "../pages/Product/ProductContext";
 
 const StoreCard = (props) => {
@@ -27,7 +28,11 @@ const StoreCard = (props) => {
         className="w-full max-h-96 object-cover bg-cover rounded-t-md"
       />
       <div className="w-full flex flex-col px-3 pb-6">
-        <span className="text-xl font-semibold">{props.name}</span>
+        <span className="text-xl font-semibold hover:underline">
+          <Link to="/product" onClick={clickHandler}>
+            {props.name}
+          </Link>
+        </span>
         <span className="font-thin">{props.brand}</span>
         <span className="mb-6 font-thin text-gray-500">
           category: {props.category}
