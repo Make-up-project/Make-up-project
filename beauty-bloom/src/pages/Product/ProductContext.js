@@ -63,7 +63,9 @@ const UserProvider = ({ children }) => {
   const [Quantity, setQuantity] = useState(1);
 
   const updateApi = (newValue) => {
+    console.log(newValue);
     setproduct_Api(newValue);
+    console.log(product_Api);
   };
 
   const updateValue = (newValue) => {

@@ -7,7 +7,9 @@ const baseEndpoint = "http://makeup-api.herokuapp.com/api/v1/products.json?";
 
 const Store = () => {
   const [apiModifiers, setApiModifiers] = useState("?");
-  const { data, isLoading, error } = useFetchData(baseEndpoint + apiModifiers);
+  const { data, isLoading, error, setData } = useFetchData(
+    baseEndpoint + apiModifiers
+  );
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -16,12 +18,25 @@ const Store = () => {
       setApiModifiers(baseEndpoint + "&price_greater_than=20");
     else if (event.target.price.value === "<20")
       setApiModifiers(baseEndpoint + "&price_less_than=20");
+    if (event.target.price.value === ">10")
+      setApiModifiers(baseEndpoint + "&price_greater_than=10");
+    else if (event.target.price.value === "<10")
+      setApiModifiers(baseEndpoint + "&price_less_than=10");
 
     if (event.target.product_type.value !== "null")
       setApiModifiers(
         (prevState) =>
           prevState + `&product_type=${event.target.product_type.value}`
       );
+  };
+
+  const handleSearch = () => {
+    const inputValue = document.getElementById("search").value;
+    setData([
+      ...data.filter((element) =>
+        element.name.toLowerCase().includes(inputValue.toLowerCase())
+      ),
+    ]);
   };
 
   return (
@@ -37,7 +52,9 @@ const Store = () => {
             Price
           </option>
           <option value=">20">Price greater than $20</option>
+          <option value=">10">Price greater than $10</option>
           <option value="<20">Price less than $20</option>
+          <option value="<10">Price less than $10</option>
         </select>
         <select
           className="select select-bordered w-full max-w-xs"
@@ -52,11 +69,38 @@ const Store = () => {
           <option value="eyeliner">Eyeliner</option>
           <option value="eyeshadow">Eyeshadow</option>
           <option value="foundation">Foundation</option>
-          <option value="lip-liner">Lip liner</option>
+          <option value="lip_liner">Lip liner</option>
           <option value="lipstick">Lipstick</option>
           <option value="mascara">Mascara</option>
-          <option value="nail-polish">Nail polish</option>
+          <option value="nail_polish">Nail polish</option>
         </select>
+
+        <div className="form-control">
+          <div className="input-group">
+            <input
+              type="text"
+              placeholder="Search…"
+              className="input input-bordered w-3/4 flex-shrink-0"
+              id="search"
+            />
+            <button className="btn btn-square" action="" onClick={handleSearch}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
 
         <button className="btn bg-white text-gray-800 border border-gray-400 hover:bg-white hover:border-gray-400 w-24">
           Apply

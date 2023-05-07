@@ -25,7 +25,7 @@ const StoreCard = (props) => {
             : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
         }
         alt={props.name}
-        className="w-full max-h-96 object-cover bg-cover rounded-t-md"
+        className="w-full max-h-96 object-fill bg-cover rounded-t-md"
       />
       <div className="w-full flex flex-col px-3 pb-6">
         <span className="text-xl font-semibold hover:underline">
