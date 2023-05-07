@@ -7,8 +7,8 @@ import Contact from "./pages/landing/ContactUs/Contact";
 import About from "./pages/landing/aboutPage/About";
 import Landing from "./pages/landing/landingPage/Landing";
 
-import Product from  "./pages/product/product"
-import NavListMenu from "./pages/NavAndFooter/Nav"
+import Product from  "./pages/Product/product";
+import NavListMenu from "./pages/NavAndFooter/Nav";
 
 import Cart from "./pages/Product/Cart"
 import UserProvider from "./pages/Product/ProductContext";
