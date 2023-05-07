@@ -3,19 +3,29 @@ import StoreCard from "../../components/StoreCard";
 
 import useFetchData from "../../hooks/useFetchData";
 
+const baseEndpoint = "http://makeup-api.herokuapp.com/api/v1/products.json?";
+
 const Store = () => {
   const [apiModifiers, setApiModifiers] = useState("?");
-  const { data, isLoading, error } = useFetchData(
-    "http://makeup-api.herokuapp.com/api/v1/products.json"
-  );
+  const { data, isLoading, error } = useFetchData(baseEndpoint + apiModifiers);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (event.target.price.value === ">20")
-      setApiModifiers((prevState) => prevState + "&" + "price_greater_than");
+    // setApiModifiers("");
 
-    console.log(event.target.price.value, event.target.product_type.value);
+    if (event.target.price.value === ">20")
+      setApiModifiers(baseEndpoint + "&" + "price_greater_than=20");
+    else if (event.target.price.value === "<20")
+      setApiModifiers(baseEndpoint + "&" + "price_less_than=20");
+
+    if (event.target.product_type.value !== "null")
+      setApiModifiers(
+        (prevState) =>
+          prevState + `&product_type=${event.target.product_type.value}`
+      );
+
+    // setApiModifiers("");
   };
 
   return (
