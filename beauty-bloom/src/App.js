@@ -9,10 +9,13 @@ import Landing from "./pages/landing/landingPage/Landing";
 
 import Product from  "./pages/product/product"
 import NavListMenu from "./pages/NavAndFooter/Nav"
-import Cart from "./pages/product/Cart"
+
+import Cart from "./pages/Product/Cart"
+import UserProvider from "./pages/Product/ProductContext";
 import Store from "./pages/Store/Store";
 function App() {
   return (
+    <UserProvider>
     <BrowserRouter>
        <NavListMenu />  
      
@@ -31,6 +34,8 @@ function App() {
       </Routes>
       <Footer />
     </BrowserRouter>
+    </UserProvider>
+
   );
 }
 
