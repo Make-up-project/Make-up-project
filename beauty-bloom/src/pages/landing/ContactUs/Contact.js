@@ -1,8 +1,16 @@
 import React from 'react'
+import BackgroundImg from './BackgroundImg'
+import TypeofContact from './TypeofContact'
+import Form from './Form'
 
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <div>
+      <BackgroundImg/>
+      <TypeofContact/>
+      <Form/>
+
+    </div>
   )
 }
 

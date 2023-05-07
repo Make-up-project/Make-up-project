@@ -1,31 +1,59 @@
 import React, { useState } from 'react'
-// import { Link } from 'react-router-dom'
-import product0001 from '../Product/images/product0001.jpg'
-import product0002 from '../Product/images/product0002.jpg'
-import product0003 from '../Product/images/product0003.jpg'
-import product0004 from '../Product/images/product0004.jpg'
-import product0005 from '../Product/images/product0005.jpg'
-import product0006 from '../Product/images/product0006.jpg'
-import product0007 from '../Product/images/product0007.jpg'
-import product0008 from '../Product/images/product0008.jpg'
+import { Outlet, Link } from 'react-router-dom'
+import product0001 from './images/product0001.jpg'
+import product0002 from './images/product0002.jpg'
+import product0003 from './images/product0003.jpg'
+import product0004 from './images/product0004.jpg'
+import product0005 from './images/product0005.jpg'
+import product0006 from './images/product0006.jpg'
+import product0007 from './images/product0007.jpg'
+import product0008 from './images/product0008.jpg'
 import "./product.css"
+
+import { useContext } from 'react'
+import { UserContext } from './ProductContext';
+
+
+
+
+
 const Product = () => {
-  const [imgButton, setimgButton] = useState(product0001);
-  const [colorButton, setcolorButton] = useState("none");
-  const  [buttonId ,setButtonId] =useState();
+
+
+  const { product_Api,updateValueProduct_Api } = useContext(UserContext)
 
  
 
+
+
+
+
+  const { Quantity,updateValueQuantity } = useContext(UserContext)
+  const { imgButton,updateValueImgButton } = useContext(UserContext)
+
+  const [colorButton, setcolorButton] = useState("none");
+  const  [buttonId ,setButtonId] =useState();
+ 
+
 let images0=[product0001,product0002,product0003,product0004,product0005,product0006,product0007,product0008]
-let colors0= ["#A05353","#D99483","#DD4848","#C88C8C","#EF9D85","#985D5D","#773225","#A60E25"]
-function abyss(e,i){
+
+
+
+ 
+
+
+function abyss(i){
   setButtonId(i)
-  setimgButton(images0[i])
+
+  updateValueImgButton(images0[i])
   setcolorButton("black")
 }
 
+function handleChange(event){
+  updateValueQuantity(event.target.value)
+}
 
-console.log(colorButton)
+
   return (
     <>
     <div className='productContainer'>
@@ -38,10 +66,13 @@ console.log(colorButton)
 
   {
     
- images0.map((e,i)=>{
-  return <button style={{background:buttonId===i ? "black" : "none"}} onClick={()=>abyss(e,i)}  >  </button>
- })
-  }
+      product_Api.product_colors.map((e,i)=>{
+        return <button style={{background:buttonId===i ? "black" : "none"}} onClick={()=>abyss(i)}  >  </button>
+       })
+
+    }
+
+  
 
   </div>
 
@@ -58,19 +89,18 @@ console.log(colorButton)
  <div className='productSection2 productBox'>
 
   <p className='productNeme'>Luxury Matte Lipstick</p>
-  <p className='productPrice'>$37.00</p>
+  <p className='productPrice'>$<span>{product_Api.price}</span></p>
 
  <div className='producShades'>
  <p>Shades</p>
     <div className='productButtons2'>
 
     {
-    colors0.map((e,i)=> {
+  
 
-    return <button style={{backgroundColor:colors0[i]}} onClick={()=>abyss(e,i)}  >  </button>
-
-
-    })
+    product_Api.product_colors.map((e,i)=> {
+      return <button style={{backgroundColor:product_Api.product_colors[i].hex_value}} onClick={()=>abyss(i)}></button>
+      })
     
     }
       
@@ -79,17 +109,14 @@ console.log(colorButton)
   
 
   <p>Quantity</p>
-  <input style={{textAlign:"center"}} type='number'/>
+  <input type='number' onChange={handleChange} value={Quantity} style={{textAlign:"center"}} />
  
- <button className='addToCartButton'>Add to Cart</button>
+ <Link to="/Cart"><button className='addToCartButton'>Add to Cart</button></Link>
 
 
     <p className='prodeuctDescription'>Description</p>
  
-      <p>24 hr Hydra Technology provides long-lasting,
-         intense hydration. Suspended Pigments create a soft
-        cushion, comfort, and long-lasting wear. Sodium
-        Hyaluronate keeps lips soft, smooth, and hydrated.</p>
+      <p className='prodeuctDescriptionp' >{product_Api.description}</p>
 
 
  </div>
@@ -97,7 +124,7 @@ console.log(colorButton)
     
     
     
-    
+    <Outlet/>
     </>
   )
 }
