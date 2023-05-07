@@ -12,20 +12,16 @@ const Store = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // setApiModifiers("");
-
     if (event.target.price.value === ">20")
-      setApiModifiers(baseEndpoint + "&" + "price_greater_than=20");
+      setApiModifiers(baseEndpoint + "&price_greater_than=20");
     else if (event.target.price.value === "<20")
-      setApiModifiers(baseEndpoint + "&" + "price_less_than=20");
+      setApiModifiers(baseEndpoint + "&price_less_than=20");
 
     if (event.target.product_type.value !== "null")
       setApiModifiers(
         (prevState) =>
           prevState + `&product_type=${event.target.product_type.value}`
       );
-
-    // setApiModifiers("");
   };
 
   return (
@@ -61,23 +57,17 @@ const Store = () => {
           <option value="mascara">Mascara</option>
           <option value="nail-polish">Nail polish</option>
         </select>
-        {/* <select className="select select-bordered w-full max-w-xs">
-          <option disabled selected>
-            Who shot first?
-          </option>
-          <option>Han Solo</option>
-          <option>Greedo</option>
-        </select> */}
+
         <button className="btn bg-white text-gray-800 border border-gray-400 hover:bg-white hover:border-gray-400 w-24">
           Apply
         </button>
       </form>
       <div className=" grid grid-cols-1 max-w sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-3">
+        {error && <div>{error}</div>}
         {isLoading ? (
           <div>Loading...</div>
         ) : (
           data.map((element) => {
-            // console.log(element.product_colors);
             return (
               <StoreCard
                 key={element.id}
@@ -86,6 +76,7 @@ const Store = () => {
                 brand={element.brand}
                 category={element.category}
                 price={element.price}
+                description={element.description}
                 availableColors={element.product_colors}
               />
             );
