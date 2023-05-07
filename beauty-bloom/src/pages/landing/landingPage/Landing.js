@@ -1,11 +1,13 @@
 import React from 'react'
+import Slider from './Slider'
+import Discount from './Discount'
+
 
 const Landing = () => {
   return (
     <div>
-      <slider/>
-      <discount/>
-      <porducts/>
+      <Slider/>
+      <Discount/>
     </div>
   )
 }

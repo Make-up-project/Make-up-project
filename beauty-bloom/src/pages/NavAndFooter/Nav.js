@@ -64,6 +64,12 @@ export default function Nav() {
           <IconButton className="ms-5" variant="text" color="blue-gray">
            <Link to="/">Home</Link>
           </IconButton>
+          <IconButton className="ms-5" variant="text" color="blue-gray">
+           <Link to="Contact">Contact</Link>
+          </IconButton>
+          <IconButton className="ms-5" variant="text" color="blue-gray">
+           <Link to="About">About</Link>
+          </IconButton>
 
           <IconButton className="ms-2" variant="text" color="blue-gray">
            <a href="#">Login</a>

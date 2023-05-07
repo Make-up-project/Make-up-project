@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const FORM_ENDPOINT = ""; // TODO - fill on the later step
+const FORM_ENDPOINT = "";
 
 const Form = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -25,7 +25,6 @@ const Form = () => {
       action={FORM_ENDPOINT}
       onSubmit={handleSubmit}
       method="POST"
-      target="_blank"
       className="mx-5 bg-[#fbcfe8]"
     >
         <h1 className="text-4xl mb-3 text-center text-white">keep in touch with us</h1>
@@ -35,7 +34,7 @@ const Form = () => {
             type="text"
             placeholder="Your name"
             name="name"
-            className="px-3 py-3 placeholder-pink-500 text-pink-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full drop-shadow"
+            className="px-3 py-3 placeholder-pink-500 text-pink-600 relative bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full drop-shadow"
             required
           />
         </div>
@@ -44,7 +43,7 @@ const Form = () => {
             type="email"
             placeholder="Email"
             name="email"
-            className="px-3 py-3 placeholder-pink-500 text-pink-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full drop-shadow"
+            className="px-3 py-3 placeholder-pink-500 text-pink-600 relative  bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full drop-shadow"
             required
           />
         </div>
@@ -53,7 +52,7 @@ const Form = () => {
         <textarea
           placeholder="Your message"
           name="message"
-          className="drop-shadow px-3 py-3 placeholder-pink-500 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+          className="drop-shadow px-3 py-3 placeholder-pink-500 text-gray-600 relative  bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
           required
         />
       </div>
