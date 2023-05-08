@@ -1,14 +1,10 @@
 import React from "react";
 import { Children, createContext, useState } from "react";
 
-import product0001 from "../Product/images/product0001.jpg";
-import product0002 from "../Product/images/product0002.jpg";
-import product0003 from "../Product/images/product0003.jpg";
-import product0004 from "../Product/images/product0004.jpg";
-import product0005 from "../Product/images/product0005.jpg";
-import product0006 from "../Product/images/product0006.jpg";
-import product0007 from "../Product/images/product0007.jpg";
-import product0008 from "../Product/images/product0008.jpg";
+import product0001 from "../product/images/product0001.jpg";
+import product0002 from "../product/images/product0002.jpg";
+import product0003 from "../product/images/product0003.jpg";
+
 
 export const UserContext = createContext();
 const UserProvider = ({ children }) => {

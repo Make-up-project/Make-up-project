@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { UserContext } from "../pages/Product/ProductContext";
+import { UserContext } from "../pages/product/ProductContext";
 
 const StoreCard = (props) => {
   const { updateApi } = useContext(UserContext);
