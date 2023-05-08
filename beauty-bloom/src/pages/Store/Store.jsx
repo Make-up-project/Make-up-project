@@ -7,7 +7,7 @@ const baseEndpoint = "http://makeup-api.herokuapp.com/api/v1/products.json?";
 
 const Store = () => {
   const [apiModifiers, setApiModifiers] = useState("?");
-  const { data, isLoading, error, setData } = useFetchData(
+  const { data, isLoading, error, setData, unmodifiedData } = useFetchData(
     baseEndpoint + apiModifiers
   );
 
@@ -32,8 +32,9 @@ const Store = () => {
 
   const handleSearch = () => {
     const inputValue = document.getElementById("search").value;
+    console.log(unmodifiedData);
     setData([
-      ...data.filter((element) =>
+      ...unmodifiedData.filter((element) =>
         element.name.toLowerCase().includes(inputValue.toLowerCase())
       ),
     ]);
@@ -75,6 +76,10 @@ const Store = () => {
           <option value="nail_polish">Nail polish</option>
         </select>
 
+        <button className="btn bg-white text-gray-800 border border-gray-400 hover:bg-white hover:border-gray-400 w-24">
+          Apply
+        </button>
+
         <div className="form-control">
           <div className="input-group">
             <input
@@ -101,10 +106,6 @@ const Store = () => {
             </button>
           </div>
         </div>
-
-        <button className="btn bg-white text-gray-800 border border-gray-400 hover:bg-white hover:border-gray-400 w-24">
-          Apply
-        </button>
       </form>
       <div className=" grid grid-cols-1 max-w sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-3">
         {error && <div>{error}</div>}
