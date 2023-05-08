@@ -9,13 +9,28 @@ import { mdiAlphaX, mdiMenu } from "@mdi/js";
 import "./Navbar.css";
 import { IconButton } from "@material-tailwind/react";
 
+import { useContext } from "react";
+import { UserContext } from "../Product/ProductContext";
+
+
+
+
+
 const Navbar = () => {
+
+  const {signState,updatesignState } = useContext(UserContext);
+
+
+
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
 
   return (
     <div className="w-screen h-[80px] z-10 bg-[#e4e4e7] drop-shadow-lg sticky top-0">
+
+
       <div className="flex justify-between items-center w-full h-full px-10">
+
         <div className="flex items-center ">
           <div className="w-12">
             <img className="object-cover" src={logomakeup} alt="" />
@@ -51,7 +66,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="hidden md:flex pr-4">
-          <button className="px-8 py-3 buttonNav border-none bg-transparent text-black mr-4">
+         <Link to="Cart"> <button className="px-8 py-3 buttonNav border-none bg-transparent text-black mr-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -61,8 +76,9 @@ const Navbar = () => {
               <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
             </svg>
           </button>
+          </Link>
           <button className="buttonNav border-none bg-transparent px-8 py-3 text-black mr-4">
-            <Link to="Login">Sign In</Link>
+            <Link to="Login">{signState}</Link>
           </button>
         </div>
         <div className="md:hidden mr-4" onClick={handleClick}>
@@ -103,7 +119,7 @@ const Navbar = () => {
         </li>
         <div className="flex flex-row my-4">
           <button className="buttonNav bg-transparent text-pink-600 px-8 py-3 mb-4">
-            <Link to="Login">Sign In</Link>
+            <Link to="Login">{signState}</Link>
           </button>
           <button className="buttonNav px-8 py-3 mb-4 ms-5">
             <svg

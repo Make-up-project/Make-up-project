@@ -3,6 +3,7 @@ import { Carousel, Typography, Button } from "@material-tailwind/react";
 import backImgi from "./landing-img/backImgi.jpg";
 import backImgiiii from "./landing-img/backImgiiii.jpg";
 import backImgiii from "./landing-img/backImgiii.jpg";
+import { Link } from "react-router-dom";
 
 const Slider = () => {
   return (
@@ -32,9 +33,11 @@ const Slider = () => {
                 offers that you can't refuse.
               </Typography>
               <div className="flex  gap-2">
-                <Button size="lg" color="white">
+              <Link to="/Store">
+                  <Button size="lg" color="white">
                   BUY NOW
                 </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -63,9 +66,11 @@ const Slider = () => {
                 offers that you can't refuse.
               </Typography>
               <div className="flex justify-center hover:bg-violet-600">
-                <Button size="lg" color="white">
+              <Link to="/Store">
+                 <Button size="lg" color="white">
                   BUY NOW
                 </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -94,9 +99,12 @@ const Slider = () => {
                 offers that you can't refuse.
               </Typography>
               <div className="flex gap-2">
+
+              <Link to="/Store">
                 <Button size="lg" color="white">
                   BUY NOW
                 </Button>
+                </Link>
               </div>
             </div>
           </div>

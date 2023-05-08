@@ -34,7 +34,9 @@ const Product = () => {
   };
 
   return (
-    <>
+    <div className="mainContainer0">
+
+    
       <div className="productContainer">
         <div className="productSection1 productBox">
           <img src={product_Api.image} alt="" />
@@ -98,7 +100,7 @@ const Product = () => {
       </div>
 
       <Outlet />
-    </>
+    </div>
   );
 };
 

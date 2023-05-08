@@ -4,12 +4,12 @@ import StoreCard from "../../../components/StoreCard";
 const Discount = () => {
   return (
     <div>
-      <h1 className="text-center text-2xl py-5 font-semibold">Discount section</h1>
+      <h1 className="text-center text-5xl py-5 font-semibold">Discount section</h1>
       <h5 className="text-center mb-7">Discover our new items for limited time</h5>
       <div className=" grid grid-cols-1 max-w sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-3 px-5">
         <StoreCard
           imageURL="http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/035/original/open-uri20180630-4-n6wb0y?1530390383"
-          name=""
+          name="crame jonson "
           brand=""
           category="powder"
           price="20"
@@ -32,7 +32,7 @@ const Discount = () => {
         />
         <StoreCard
           imageURL="http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/881/original/open-uri20171224-4-xaiokt?1514082636"
-          name=""
+          name="nail polish"
           brand=""
           category="null"
           price="6"
@@ -75,7 +75,7 @@ const Discount = () => {
         />
         <StoreCard
           imageURL="http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/776/original/open-uri20171223-4-122ljen?1514072604"
-          name=""
+          name="ointment"
           brand=""
           category="null"
           price="15"
@@ -126,7 +126,7 @@ const Discount = () => {
         />
         <StoreCard
           imageURL="http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/420/original/open-uri20171223-4-1w3nykx?1514063321"
-          name=""
+          name="powder"
           brand=""
           category="cream"
           price="10"
