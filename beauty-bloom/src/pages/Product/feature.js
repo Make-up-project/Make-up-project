@@ -1,27 +1,19 @@
+import React, { useState } from "react";
+import { Outlet, Link } from "react-router-dom";
+import product0001 from "./images/product0001.jpg";
+import product0002 from "./images/product0002.jpg";
+import product0003 from "./images/product0003.jpg";
+import product0004 from "./images/product0004.jpg";
+import product0005 from "./images/product0005.jpg";
+import product0006 from "./images/product0006.jpg";
+import product0007 from "./images/product0007.jpg";
+import product0008 from "./images/product0008.jpg";
+import "./product.css";
 
-import React, { useState } from 'react'
-import { Outlet, Link } from 'react-router-dom'
-import product0001 from './images/product0001.jpg'
-import product0002 from './images/product0002.jpg'
-import product0003 from './images/product0003.jpg'
-import product0004 from './images/product0004.jpg'
-import product0005 from './images/product0005.jpg'
-import product0006 from './images/product0006.jpg'
-import product0007 from './images/product0007.jpg'
-import product0008 from './images/product0008.jpg'
-import "./product.css"
+import { useContext } from "react";
+import { UserContext } from "./ProductContext";
 
-import { useContext } from 'react'
-import { UserContext } from './ProductContext';
-
-
-
-
-
-const Product = () => {
-
-
-
+const ProductFeature = () => {
   // const [myArray, setMyArray] = useState([]);
 
   // setMyArray(oldArray => [...oldArray, i]);
@@ -69,114 +61,104 @@ const Product = () => {
     ],
   };
 
-
-
-  const { Quantity,updateValueQuantity } = useContext(UserContext)
-  const { imgButton,updateValueImgButton } = useContext(UserContext)
+  const { Quantity, updateValueQuantity } = useContext(UserContext);
+  const { imgButton, updateValueImgButton } = useContext(UserContext);
   const { Price, updateValuePrice } = useContext(UserContext);
   const [colorButton, setcolorButton] = useState("none");
-  const  [buttonId ,setButtonId] =useState();
-  updateValuePrice(product_Api.price)
+  const [buttonId, setButtonId] = useState();
+  updateValuePrice(product_Api.price);
 
-let images0=[product0001,product0002,product0003,product0004,product0005,product0006,product0007,product0008]
+  let images0 = [
+    product0001,
+    product0002,
+    product0003,
+    product0004,
+    product0005,
+    product0006,
+    product0007,
+    product0008,
+  ];
 
+  function abyss(i) {
+    setButtonId(i);
 
+    updateValueImgButton(images0[i]);
+    setcolorButton("black");
+  }
 
- 
-
-
-function abyss(i){
-
-  
-  setButtonId(i)
-
-  updateValueImgButton(images0[i])
-  setcolorButton("black")
-}
-
-function handleChange(event){
-  updateValueQuantity(event.target.value)
-}
-
-
-
-
-
-
+  function handleChange(event) {
+    updateValueQuantity(event.target.value);
+  }
 
   return (
     <>
-    <div className='productContainer'>
+      <div className="productContainer">
+        <div className="productSection1 productBox">
+          <img src={imgButton} alt="" />
 
- <div className='productSection1 productBox'>
- <img  src={imgButton}  alt=''/>
+          <div className="productButtons1">
+            {product_Api.product_colors_img.map((e, i) => {
+              return (
+                <button
+                  style={{ background: buttonId === i ? "black" : "none" }}
+                  onClick={() => abyss(i)}
+                >
+                  {" "}
+                </button>
+              );
+            })}
+          </div>
 
-  <div className='productButtons1'>
-    
+          <p>Net Wt. 0.12 oz</p>
+          <p>
+            FREE OF PARABENS OR FRAGRANCE. FORMULATED WITHOUT ALCOHOL, BARLEY,
+            CORN, OATS, RYE, SOY, SPELT, OR WHEAT. SELECT SHADES ARE VEGAN.
+          </p>
+          {/* <Link to='/about'>Go to Aboutpage</Link>  */}
+        </div>
 
-  {
-    
-      product_Api.product_colors_img.map((e,i)=>{
-        return <button style={{background:buttonId===i ? "black" : "none"}} onClick={()=>abyss(i)}  >  </button>
-       })
+        <div className="productSection2 productBox">
+          <p className="productNeme">Luxury Matte Lipstick</p>
+          <p className="productPrice">
+            $<span>{product_Api.price}</span>
+          </p>
 
-    }
+          <div className="producShades">
+            <p>Shades</p>
+            <div className="productButtons2">
+              {product_Api.product_colors_img.map((e, i) => {
+                return (
+                  <button
+                    style={{
+                      backgroundColor: product_Api.product_colors[i].hex_value,
+                    }}
+                    onClick={() => abyss(i)}
+                  ></button>
+                );
+              })}
+            </div>
+          </div>
 
-  
+          <p>Quantity</p>
+          <input
+            type="number"
+            onChange={handleChange}
+            value={Quantity}
+            style={{ textAlign: "center" }}
+          />
 
-  </div>
+          <Link to="/CartFeature">
+            <button className="addToCartButton">Add to Cart</button>
+          </Link>
 
-   <p>Net Wt. 0.12 oz</p>
-   <p>FREE OF PARABENS OR FRAGRANCE. FORMULATED WITHOUT ALCOHOL,
-      BARLEY, CORN, OATS, RYE, SOY, SPELT, OR WHEAT. SELECT SHADES ARE
-       VEGAN.
-       </p>
-       {/* <Link to='/about'>Go to Aboutpage</Link>  */}
- </div>
+          <p className="prodeuctDescription">Description</p>
+          <p className="prodeuctDescriptionp">{product_Api.description}</p>
+        </div>
+      </div>
 
-
-
- <div className='productSection2 productBox'>
-
-  <p className='productNeme'>Luxury Matte Lipstick</p>
-  <p className='productPrice'>$<span>{product_Api.price}</span></p>
-
- <div className='producShades'>
- <p>Shades</p>
-    <div className='productButtons2'>
-
-    {
-  
-
-    product_Api.product_colors_img.map((e,i)=> {
-      return <button style={{backgroundColor:product_Api.product_colors[i].hex_value}} onClick={()=>abyss(i)}></button>
-      })
-    
-    }
-      
-    </div>
-  </div>
-  
-
-  <p>Quantity</p>
-  <input type='number' onChange={handleChange} value={Quantity} style={{textAlign:"center"}} />
- 
- <Link to="/CartFeature"><button className='addToCartButton'>Add to Cart</button></Link>
-
-
-    <p className='prodeuctDescription'>Description</p>
-    <p className='prodeuctDescriptionp' >{product_Api.description}</p>
-
-
- </div>
- </div>
-    
-    
-    
-    <Outlet/>
+      <Outlet />
     </>
-  )
-}
+  );
+};
 
-export default Product
-
+export default ProductFeature;
