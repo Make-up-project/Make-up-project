@@ -1,15 +1,38 @@
 import { useState } from "react";
 import StoreCard from "../../components/StoreCard";
-
 import useFetchData from "../../hooks/useFetchData";
+import Pagination from "@mui/material/Pagination";
+
+import { MagnifyingGlass } from "react-loader-spinner";
 
 const baseEndpoint = "http://makeup-api.herokuapp.com/api/v1/products.json?";
 
 const Store = () => {
   const [apiModifiers, setApiModifiers] = useState("?");
+
   const { data, isLoading, error, setData, unmodifiedData } = useFetchData(
     baseEndpoint + apiModifiers
   );
+
+  const [currentPage, setCurrentPage] = useState(1);
+
+  let totalItems;
+  let totalPages;
+  let slicedArray;
+
+  if (!isLoading) {
+    const itemsPerPage = 12;
+    totalItems = data.length;
+    totalPages = Math.ceil(totalItems / itemsPerPage);
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    slicedArray = data.slice(startIndex, endIndex);
+  }
+
+  const handlePageChange = (event, pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -110,9 +133,18 @@ const Store = () => {
       <div className=" grid grid-cols-1 max-w sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-3">
         {error && <div>{error}</div>}
         {isLoading ? (
-          <div>Loading...</div>
+          <MagnifyingGlass
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="MagnifyingGlass-loading"
+            wrapperStyle={{}}
+            wrapperClass="MagnifyingGlass-wrapper"
+            glassColor="#c0efff"
+            color="#be908c"
+          />
         ) : (
-          data.map((element) => {
+          slicedArray.map((element) => {
             return (
               <StoreCard
                 key={element.id}
@@ -128,6 +160,13 @@ const Store = () => {
           })
         )}
       </div>
+      {!isLoading && (
+        <Pagination
+          count={totalPages}
+          page={currentPage}
+          onChange={handlePageChange}
+        />
+      )}
     </div>
   );
 };

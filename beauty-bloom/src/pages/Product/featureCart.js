@@ -11,17 +11,17 @@ const Cart = () => {
   const { Price, updateValuePrice } = useContext(UserContext);
   const { Quantity, updateValueQuantity } = useContext(UserContext);
 
-console.log(Price)
+  console.log(Price);
   const [num, setNum] = useState(Number(Quantity));
 
   function incButton() {
-    setNum((num) + 1);
-    updateValueQuantity((num) + 1);
+    setNum(num + 1);
+    updateValueQuantity(num + 1);
   }
   function decButton() {
     if (num != 0) {
-      setNum((num) - 1);
-      updateValueQuantity((num) - 1);
+      setNum(num - 1);
+      updateValueQuantity(num - 1);
     }
   }
 
