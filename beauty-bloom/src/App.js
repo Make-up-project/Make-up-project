@@ -17,6 +17,8 @@ import Cart from "./pages/Product/Cart";
 import CartFeature from "./pages/Product/featureCart";
 import UserProvider from "./pages/Product/ProductContext";
 import Store from "./pages/Store/Store";
+
+
 function App() {
   return (
     <UserProvider>

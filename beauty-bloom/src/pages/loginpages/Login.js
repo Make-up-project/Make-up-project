@@ -5,8 +5,15 @@ import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import { useState ,useEffect} from 'react';
 
+import { useContext } from "react";
+import { UserContext } from "../Product/ProductContext";
+
 
 export default function Login() {
+
+
+const {signState,updatesignState } = useContext(UserContext);
+
     function check_login(email,password) {
         if(localStorage.userinfo !== null && localStorage.userinfo !== undefined){
             let userinfo = [];
@@ -110,6 +117,9 @@ export default function Login() {
            let userdata = get_info(email);
            alert(userdata.userEmail);
         alert("welcome");
+        updatesignState("LogOut")
+        localStorage.setItem("userState",JSON.stringify(signState))
+        window.location.replace("Landing")
         }else{
         alert("Error in username or password.");
         }

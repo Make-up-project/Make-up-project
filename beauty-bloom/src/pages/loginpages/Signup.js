@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Logo1 from "../Image/logomakeup.png";
 import { useState } from 'react';
 
+
 export default function Signup() {
     const [name, setName] = useState("");
     const [namep, setNamep] = useState("");

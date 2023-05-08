@@ -12,6 +12,12 @@ const UserProvider = ({ children }) => {
   const [Quantity, setQuantity] = useState(1);
   const [myArray, setMyArray] = useState([]);
 
+  const [signState,setSignState] = useState("Login");
+
+  const updatesignState = (newValue) => {
+    setSignState(newValue);
+  };
+
   const updateApi1 = (newValue) => {
     setMyArray(newValue);
   };
@@ -53,6 +59,8 @@ const UserProvider = ({ children }) => {
           updateApi,
           updateApi1,
           myArray,
+          signState,
+          updatesignState
         }}
       >
         {children}
