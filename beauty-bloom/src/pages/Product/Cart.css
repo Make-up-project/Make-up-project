@@ -8,6 +8,13 @@
     width: 65%;
 }
 
+.deletebutton{
+    background-color: rgb(211, 137, 137);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+}
+
 .s1MyCart{
     display: flex;
     justify-content: space-between;
@@ -31,6 +38,8 @@
     display: flex;
     justify-content: space-between;
     margin: 1rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black;
     
 }
 
@@ -122,7 +131,12 @@
 
    .priceCancel{
     display: flex;
+    align-items: center;
     width: 5rem;
+   }
+
+   .priceCancel p{
+    text-align: center;
    }
 
 

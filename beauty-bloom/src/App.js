@@ -8,9 +8,12 @@ import About from "./pages/landing/aboutPage/About";
 import Landing from "./pages/landing/landingPage/Landing";
 
 import Product from  "./pages/Product/product"
+import ProductFeature from  "./pages/Product/feature"
+
 import NavListMenu from "./pages/NavAndFooter/Nav"
 
 import Cart from "./pages/Product/Cart"
+import CartFeature from "./pages/Product/featureCart"
 import UserProvider from "./pages/Product/ProductContext";
 import Store from "./pages/Store/Store";
 function App() {
@@ -22,8 +25,9 @@ function App() {
       <Routes>
         <Route element={<Landing />} path="/" />
         <Route element={<Product />} path="Product" />
-
+        <Route element={<ProductFeature />} path="ProductFeature" />
         <Route element={<Cart />} path="Cart" />
+        <Route element={<CartFeature />} path="CartFeature" />
 
 
         <Route path="/" />

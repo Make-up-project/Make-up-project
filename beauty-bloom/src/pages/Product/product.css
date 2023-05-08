@@ -34,10 +34,9 @@ border: 1px solid black;
 }
 
 .productButtons1{
-    display: flex;
-    align-items: center;
-   justify-content: center;
-   margin-top: 0.5rem;
+    display: grid;
+    grid-auto-rows: minmax(1rem,1rem);
+    grid-template-columns: repeat(10,1fr);
 }
 
 .productNeme{
@@ -54,7 +53,7 @@ border: 1px solid black;
     border: 1px solid black;
     }
 
-p{
+.productContainer p{
     width: 20rem;
     margin: 0.1rem 0;
 }
@@ -118,15 +117,15 @@ input{
       .productPrice{
         text-align: center;
       }
-      p{text-align: center;
+      .productContainer   p{text-align: center;
      width: 100%;
     }
 
 
       .productButtons2{
-        display: flex;
-        justify-content: center;
-       align-items: center;
+        display: grid;
+      grid-auto-rows: minmax(2rem,5rem);
+      grid-template-columns: repeat(5,1fr);
         }
 
 
@@ -150,7 +149,7 @@ input{
                 width: 15rem;
               
             }
-            p{
+            .productContainer  p{
                 width: 10rem;
             }
 
