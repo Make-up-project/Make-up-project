@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../pages/Product/ProductContext";
 
 const StoreCard = (props) => {
+  const { updateApi } = useContext(UserContext);
   const { myArray: _, updateApi1: updateApiVariable } = useContext(UserContext);
 
   const clickHandler = () => {
-    updateApiVariable({
+    updateApi({
       price: props.price,
       description: props.description,
       image: props.imageURL,
@@ -53,7 +54,7 @@ const StoreCard = (props) => {
         </span>
 
         <span className="text-xl">
-          Price:{" "}
+          Price:
           <span className="font-bold">
             $
             {props.discountValue ? (
