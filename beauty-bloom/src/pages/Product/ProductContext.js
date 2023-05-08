@@ -1,36 +1,26 @@
 import React from "react";
 import { Children, createContext, useState } from "react";
 
-
-import product0001 from "../product/images/product0001.jpg";
-
+import product0001 from "../Product/images/product0001.jpg";
 
 export const UserContext = createContext();
 const UserProvider = ({ children }) => {
-
-
-  const [product_Api, setproduct_Api] = useState();//pApi
+  const [product_Api, setproduct_Api] = useState(); //pApi
 
   const [imgButton, setimgButton] = useState(product0001);
   const [Price, setPrice] = useState(0);
   const [Quantity, setQuantity] = useState(1);
   const [myArray, setMyArray] = useState([]);
 
-
- 
-
-const updateApi1 = (newValue) => {
-  setMyArray(newValue);
+  const updateApi1 = (newValue) => {
+    setMyArray(newValue);
   };
-
-
 
   const updateApi = (newValue) => {
     console.log(newValue);
     setproduct_Api(newValue);
     console.log(product_Api);
   };
-
 
   const updateValueProduct_Api = (newValue) => {
     setproduct_Api(newValue);
