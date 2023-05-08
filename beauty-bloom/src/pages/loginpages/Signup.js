@@ -137,7 +137,7 @@ export default function Signup() {
                             onChange={(e) => setpassword(e.target.value)}/>
                             <p className="text-red-500">{passwordp}</p>
                         <button type='submit' 
-                            className="mt-5 bg-[#BC6247] tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-[#E0665B] transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                            className="mt-5 bg-[#BC6247] tracking-wide font-semibold  text-gray-100 w-full py-4 rounded-lg hover:bg-[#E0665B] transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                             <svg className="w-6 h-6 -ml-2" fill="none" stroke="currentColor" strokeWidth="2"
                                 strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />

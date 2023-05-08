@@ -133,7 +133,7 @@ export default function Login() {
                 <div className="w-full flex-1 mt-8">
                     <div className="flex flex-col items-center ">
                         <button id="google-sign-in" 
-                            className="w-full bg-[#F3CBCc] max-w-xs font-bold  shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline"
+                            className="w-full bg-[#F3CBCc] max-w-xs font-bold  shadow-sm rounded-lg py-3 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline"
                             onClick={() => login()} >
 
                             <div className="bg-white p-2 rounded-full">
@@ -183,7 +183,7 @@ export default function Login() {
                             onChange={(e) => setpassword(e.target.value)}/>
                             <p className="text-red-500">{passwordp}</p>
                         <button type='submit'
-                            className="mt-5 bg-[#BC6247] tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-[#E0665B] transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                            className="mt-5 bg-[#BC6247] tracking-wide font-semibold text-gray-100 w-full py-4 rounded-lg hover:bg-[#E0665B] transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                             <svg className="w-6 h-6 -ml-2" fill="none" stroke="currentColor" strokeWidth="2"
                                 strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
