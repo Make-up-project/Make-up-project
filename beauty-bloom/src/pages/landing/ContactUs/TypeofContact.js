@@ -16,7 +16,7 @@ const TypeofContact = () => {
           </div>
           <div className="text">
             <h3>OFFICE ADDRESS</h3>
-            <p>380 St Kilda Road, MelbourneVIC 3004, Australia</p>
+            <p>380 St Khalda Road, Amman 3004, Jordan</p>
           </div>
         </div>
         <div className="cardd">

@@ -32,10 +32,12 @@
   border: 1px solid black;
 }
 
-.productButtons1 {
-  display: grid;
-  grid-auto-rows: minmax(1rem, 1rem);
-  grid-template-columns: repeat(10, 1fr);
+
+.productButtons1{
+    display: grid;
+    grid-auto-rows: minmax(1rem,1rem);
+    grid-template-columns: repeat(10,1fr);
+
 }
 
 .productNeme {
@@ -52,9 +54,11 @@
   border: 1px solid black;
 }
 
-.productContainer p {
-  width: 20rem;
-  margin: 0.1rem 0;
+
+.productContainer p{
+    width: 20rem;
+    margin: 0.1rem 0;
+
 }
 
 input {
@@ -88,8 +92,53 @@ input {
   .productContainer {
     width: 100%;
 
-    flex-direction: column;
-  }
+
+@media (max-width: 600px){
+    .productBox{
+   
+        padding: 0rem;
+        }
+    .productContainer{
+        width: 100%;
+        
+        
+        flex-direction: column;
+        }
+
+        .productSection1{
+            align-items: center;
+        }
+        .productSection2{
+            align-items: center;
+        }
+
+        .addToCartButton{
+            background-color: green;
+            height: 2.5rem;
+            width: 100%;
+            margin:0.5rem 0 ;
+        }
+
+
+        .productNeme{
+            text-align: center;
+        }
+
+      .productPrice{
+        text-align: center;
+      }
+      .productContainer   p{text-align: center;
+     width: 100%;
+    }
+
+
+      .productButtons2{
+        display: grid;
+      grid-auto-rows: minmax(2rem,5rem);
+      grid-template-columns: repeat(5,1fr);
+        }
+
+
 
   .productSection1 {
     align-items: center;
@@ -124,19 +173,26 @@ input {
   }
 }
 
-@media (max-width: 1100px) {
-  .productContainer {
-    width: 80%;
-    align-items: start;
-  }
-  .productSection1 img {
-    width: 15rem;
-  }
-  .productNeme {
-    font-size: large;
-    width: 15rem;
-  }
-  .productContainer p {
-    width: 10rem;
-  }
+
+@media (max-width: 1100px){
+
+    .productContainer{
+        width: 80%;
+        align-items: start;
+        }
+        .productSection1 img{
+            width: 15rem;
+            }
+            .productNeme{
+                font-size:large;
+                width: 15rem;
+              
+            }
+            .productContainer  p{
+                width: 10rem;
+            }
+
+
+       
 }
+

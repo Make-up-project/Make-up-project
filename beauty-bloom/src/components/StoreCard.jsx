@@ -1,10 +1,16 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { UserContext } from "../pages/Product/ProductContext";
+import { UserContext } from "../pages/product/ProductContext";
 
 const StoreCard = (props) => {
   const { updateApi } = useContext(UserContext);
+
   const { myArray: _, updateApi1: updateApiVariable } = useContext(UserContext);
+
+  const {myArray,updateApi1 } = useContext(UserContext);
+
+
+
 
   const clickHandler = () => {
     updateApi({
@@ -16,6 +22,7 @@ const StoreCard = (props) => {
       brand: props.brand,
     });
   };
+
 
   const clickCartAddHandler = () => {
     updateApiVariable((oldArray) => [
@@ -29,6 +36,17 @@ const StoreCard = (props) => {
         brand: props.brand,
       },
     ]);
+
+  const clickHandler1 = () => {
+    updateApi1(oldArray => [...oldArray, {
+      price: props.price,
+      description: props.description,
+      image: props.imageURL,
+      name: props.name,
+      colors: props.availableColors,
+      brand: props.brand,
+    }]);
+
   };
 
   return (
@@ -54,7 +72,7 @@ const StoreCard = (props) => {
         </span>
 
         <span className="text-xl">
-          Price: <span className="font-bold">${props.price} </span>
+          Price: <span className="font-bold">${props.discountValue.toFixed(2) ? <span><span className="line-through me-2">{props.price}</span><span>{props.price*20/100}</span></span>: <span>{props.price}</span>} </span>
         </span>
         <span className="mt-3 flex gap-2 flex-wrap">
           {props.availableColors.length !== 0 ? (
@@ -74,7 +92,11 @@ const StoreCard = (props) => {
       </div>
       <button
         className="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-pink-100 cursor-pointer flex items-center justify-center"
+
         onClick={clickCartAddHandler}
+
+        onClick={clickHandler1}
+
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
