@@ -7,13 +7,13 @@ import Contact from "./pages/landing/ContactUs/Contact";
 import About from "./pages/landing/aboutPage/About";
 import Landing from "./pages/landing/landingPage/Landing";
 
-import Product from  "./pages/Product/product"
-import ProductFeature from  "./pages/Product/feature"
+import Product from  "./pages/product/product"
+import ProductFeature from  "./pages/product/feature"
 
 import NavListMenu from "./pages/NavAndFooter/Nav"
 import Navbar from "./pages/NavAndFooter/Navbar";
-import Cart from "./pages/Product/Cart"
-import CartFeature from "./pages/Product/featureCart"
+import Cart from "./pages/product/Cart"
+import CartFeature from "./pages/product/featureCart"
 import UserProvider from "./pages/product/ProductContext";
 
 import Store from "./pages/Store/Store";

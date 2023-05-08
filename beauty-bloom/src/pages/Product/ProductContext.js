@@ -1,7 +1,7 @@
 import React from "react";
 import { Children, createContext, useState } from "react";
 
-import product0001 from "../Product/images/product0001.jpg";
+import product0001 from "../product/images/product0001.jpg";
 
 
 export const UserContext = createContext();

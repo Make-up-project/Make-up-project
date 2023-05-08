@@ -53,7 +53,7 @@ const StoreCard = (props) => {
         </span>
 
         <span className="text-xl">
-          Price: <span className="font-bold">${props.price} </span>
+          Price: <span className="font-bold">${props.discountValue.toFixed(2) ? <span><span className="line-through me-2">{props.price}</span><span>{props.price*20/100}</span></span>: <span>{props.price}</span>} </span>
         </span>
         <span className="mt-3 flex gap-2 flex-wrap">
           {props.availableColors.length !== 0 ? (

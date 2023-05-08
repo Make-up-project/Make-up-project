@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import { Link, animateScroll as scroll, } from 'react-scroll'
+import {  animateScroll as scroll, } from 'react-scroll'
+import { Link } from 'react-router-dom';
 import beautyb from "../Image/beautyb.png"
 import Icon from '@mdi/react';
 import { mdiAlphaX,mdiMenu } from '@mdi/js';
@@ -41,11 +42,11 @@ const Navbar = () => {
       </div>
 
       <ul className={!nav ? 'hidden' : 'absolute bg-[#d4d4d8] w-full px-8'}>
-          <li className='liNav border-b-2 border-[#d4d4d8] w-full'><Link to="#" smooth={true} duration={500}>Home</Link></li>
-          <li className='liNav border-b-2 border-[#d4d4d8] w-full'><Link to="#" smooth={true} offset={-200} duration={500}>About</Link></li>
-          <li className='liNav border-b-2 border-[#d4d4d8] w-full'><Link to="#" smooth={true} offset={-50} duration={500}>#</Link></li>
-          <li className='liNav border-b-2 border-[#d4d4d8] w-full'><Link to="#" smooth={true} offset={-100} duration={500}>#</Link></li>
-          <li className='liNav border-b-2 border-[#d4d4d8] w-full'><Link to="#" smooth={true} offset={-50} duration={500}>#</Link></li>
+          <li className='liNav border-b-2 border-[#d4d4d8] w-full'><Link to="Landing" smooth={true} duration={500}>Home</Link></li>
+          <li className='liNav border-b-2 border-[#d4d4d8] w-full'><Link to="About" smooth={true} offset={-200} duration={500}>About</Link></li>
+          <li className='liNav border-b-2 border-[#d4d4d8] w-full'><Link to="Store" smooth={true} offset={-50} duration={500}>Store</Link></li>
+          <li className='liNav border-b-2 border-[#d4d4d8] w-full'><Link to="Contact" smooth={true} offset={-100} duration={500}>Contact</Link></li>
+          <li className='liNav border-b-2 border-[#d4d4d8] w-full'><Link to="" smooth={true} offset={-50} duration={500}>#</Link></li>
         <div className='flex flex-col my-4'>
             
             <button className='buttonNav bg-transparent text-pink-600 px-8 py-3 mb-4'>Sign In</button>
