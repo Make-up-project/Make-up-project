@@ -132,7 +132,7 @@ const Store = () => {
       </form>
       <div className=" grid grid-cols-1 max-w sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-3">
         {error && <div>{error}</div>}
-        {isLoading ? (
+        {isLoading && (
           <MagnifyingGlass
             visible={true}
             height="80"
@@ -143,8 +143,10 @@ const Store = () => {
             glassColor="#c0efff"
             color="#be908c"
           />
-        ) : (
+        )}
+        {!isLoading &&
           slicedArray.map((element) => {
+            console.log(slicedArray);
             return (
               <StoreCard
                 key={element.id}
@@ -157,8 +159,7 @@ const Store = () => {
                 availableColors={element.product_colors}
               />
             );
-          })
-        )}
+          })}
       </div>
       {!isLoading && (
         <Pagination

@@ -4,22 +4,18 @@ import Footer from "./pages/NavAndFooter/Footer";
 import Contact from "./pages/landing/ContactUs/Contact";
 import About from "./pages/landing/aboutPage/About";
 import Landing from "./pages/landing/landingPage/Landing";
-<<<<<<< HEAD
+
 import Product from "./pages/Product/product";
-import ProductFeature from "./pages/product/feature";
-import NavListMenu from "./pages/NavAndFooter/Nav";
-=======
-import Product from  "./pages/product/product"
-import ProductFeature from  "./pages/product/feature"
+import ProductFeature from "./pages/Product/feature";
 
 // import NavListMenu from "./pages/NavAndFooter/Nav"
->>>>>>> bfeb2ec42fb3e84e38e26b0728911af3bc19a143
+
 import Login from "./pages/loginpages/Login";
 import Signup from "./pages/loginpages/Signup";
 import Navbar from "./pages/NavAndFooter/Navbar";
-import Cart from "./pages/product/Cart";
-import CartFeature from "./pages/product/featureCart";
-import UserProvider from "./pages/product/ProductContext";
+import Cart from "./pages/Product/Cart";
+import CartFeature from "./pages/Product/featureCart";
+import UserProvider from "./pages/Product/ProductContext";
 import Store from "./pages/Store/Store";
 function App() {
   return (
