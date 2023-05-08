@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 
-const FORM_ENDPOINT = "";
 
 const Form = () => {
   const [submitted, setSubmitted] = useState(false);
   const handleSubmit = () => {
     setTimeout(() => {
       setSubmitted(true);
-    }, 100);
+    }, 2000);
   };
 
   if (submitted) {
     return (
       <>
-        <div className="text-2xl">Thank you!</div>
-        <div className="text-md">We'll be in touch soon.</div>
+        <div className="text-2xl text-center">Thank you!</div>
+        <div className="text-md text-center mb-8">We'll be in touch soon.</div>
       </>
     );
   }
@@ -22,9 +21,10 @@ const Form = () => {
   return (
     <div className="bg-[#fbcfe8] py-5">
     <form
-      action={FORM_ENDPOINT}
+      
       onSubmit={handleSubmit}
       method="POST"
+      target="_blank"
       className="mx-5 bg-[#fbcfe8]"
     >
         <h1 className="text-4xl mb-3 text-center text-white">keep in touch with us</h1>
