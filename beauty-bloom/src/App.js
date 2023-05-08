@@ -11,11 +11,12 @@ import Product from  "./pages/product/product"
 import ProductFeature from  "./pages/product/feature"
 
 import NavListMenu from "./pages/NavAndFooter/Nav"
+import Login from "./pages/loginpages/Login";
+import Signup from "./pages/loginpages/Signup";
 import Navbar from "./pages/NavAndFooter/Navbar";
 import Cart from "./pages/product/Cart"
 import CartFeature from "./pages/product/featureCart"
 import UserProvider from "./pages/product/ProductContext";
-
 import Store from "./pages/Store/Store";
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
       <Routes>
         <Route element={<Landing />} path="/" />
         <Route element={<Product />} path="Product" />
+        <Route element={<Login/>} path="Login" />
+        <Route element={<Signup/>} path="Signup" />
         <Route element={<ProductFeature />} path="ProductFeature" />
         <Route element={<Cart />} path="Cart" />
         <Route element={<CartFeature />} path="CartFeature" />
