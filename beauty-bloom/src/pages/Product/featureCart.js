@@ -11,6 +11,7 @@ const Cart = () => {
   const { Price, updateValuePrice } = useContext(UserContext);
   const { Quantity, updateValueQuantity } = useContext(UserContext);
 
+
 console.log(Price)
   const [num, setNum] = useState(Number(Quantity));
 
@@ -22,6 +23,7 @@ console.log(Price)
     if (num != 0) {
       setNum((num) - 1);
       updateValueQuantity((num) - 1);
+
     }
   }
 

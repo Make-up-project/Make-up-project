@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import { Outlet, Link } from 'react-router-dom'
 
@@ -8,8 +9,14 @@ import { useContext } from 'react'
 import { UserContext } from "./ProductContext"
 
 
+import "./product.css";
+
+import { useContext } from "react";
+import { UserContext } from "./ProductContext";
 
 const Product = () => {
+  const { product_Api, updateValueProduct_Api } = useContext(UserContext);
+
 
 
 const { product_Api,updateValueProduct_Api } = useContext(UserContext)
@@ -52,12 +59,14 @@ const clickHandler1 = () => {
     
 
   {/* {
+
     
       product_Api.colors.map((e,i)=>{
         return <button style={{background:buttonId===i ? "black" : "none"}} onClick={()=>abyss(i)}  >  </button>
        })
 
     } */}
+
 
   
 
@@ -111,8 +120,9 @@ const clickHandler1 = () => {
     
     
     <Outlet/>
-    </>
-  )
-}
 
-export default Product
+    </>
+  );
+};
+
+export default Product;

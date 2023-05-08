@@ -1,6 +1,7 @@
 import React from "react";
 import { Children, createContext, useState } from "react";
 
+
 import product0001 from "../product/images/product0001.jpg";
 
 
@@ -9,10 +10,12 @@ const UserProvider = ({ children }) => {
 
 
   const [product_Api, setproduct_Api] = useState();//pApi
+
   const [imgButton, setimgButton] = useState(product0001);
   const [Price, setPrice] = useState(0);
   const [Quantity, setQuantity] = useState(1);
   const [myArray, setMyArray] = useState([]);
+
 
  
 
@@ -28,7 +31,6 @@ const updateApi1 = (newValue) => {
     console.log(product_Api);
   };
 
- 
 
   const updateValueProduct_Api = (newValue) => {
     setproduct_Api(newValue);

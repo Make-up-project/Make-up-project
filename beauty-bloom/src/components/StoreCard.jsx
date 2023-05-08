@@ -4,7 +4,11 @@ import { UserContext } from "../pages/product/ProductContext";
 
 const StoreCard = (props) => {
   const { updateApi } = useContext(UserContext);
+
+  const { myArray: _, updateApi1: updateApiVariable } = useContext(UserContext);
+
   const {myArray,updateApi1 } = useContext(UserContext);
+
 
 
 
@@ -19,6 +23,20 @@ const StoreCard = (props) => {
     });
   };
 
+
+  const clickCartAddHandler = () => {
+    updateApiVariable((oldArray) => [
+      ...oldArray,
+      {
+        price: props.price,
+        description: props.description,
+        image: props.imageURL,
+        name: props.name,
+        colors: props.availableColors,
+        brand: props.brand,
+      },
+    ]);
+
   const clickHandler1 = () => {
     updateApi1(oldArray => [...oldArray, {
       price: props.price,
@@ -28,6 +46,7 @@ const StoreCard = (props) => {
       colors: props.availableColors,
       brand: props.brand,
     }]);
+
   };
 
   return (
@@ -73,7 +92,11 @@ const StoreCard = (props) => {
       </div>
       <button
         className="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-pink-100 cursor-pointer flex items-center justify-center"
+
+        onClick={clickCartAddHandler}
+
         onClick={clickHandler1}
+
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

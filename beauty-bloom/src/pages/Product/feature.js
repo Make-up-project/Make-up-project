@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import { Outlet, Link } from 'react-router-dom'
 import product0001 from './images/product0001.jpg'
@@ -20,17 +21,11 @@ import { UserContext } from './ProductContext';
 const Product = () => {
 
 
+
   // const [myArray, setMyArray] = useState([]);
 
   // setMyArray(oldArray => [...oldArray, i]);
   // console.log(myArray)
-
-
-
-
-
-
-
 
   const product_Api = {
     id: 1035,
@@ -73,6 +68,7 @@ const Product = () => {
       },
     ],
   };
+
 
 
   const { Quantity,updateValueQuantity } = useContext(UserContext)
@@ -183,3 +179,4 @@ function handleChange(event){
 }
 
 export default Product
+
