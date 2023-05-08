@@ -23,7 +23,9 @@ const updateApi1 = (newValue) => {
 
 
   const updateApi = (newValue) => {
+    console.log(newValue);
     setproduct_Api(newValue);
+    console.log(product_Api);
   };
 
  
