@@ -1,8 +1,6 @@
 
 import React, { useState } from 'react'
 import { Outlet, Link } from 'react-router-dom'
-
-
 import "./product.css"
 
 import { useContext } from 'react'
@@ -11,15 +9,9 @@ import { UserContext } from "./ProductContext"
 
 import "./product.css";
 
-import { useContext } from "react";
-import { UserContext } from "./ProductContext";
-
 const Product = () => {
   const { product_Api, updateValueProduct_Api } = useContext(UserContext);
 
-
-
-const { product_Api,updateValueProduct_Api } = useContext(UserContext)
 
 console.log(product_Api)
   const {myArray,updateApi1 } = useContext(UserContext);

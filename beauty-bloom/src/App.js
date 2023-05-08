@@ -6,21 +6,10 @@ import Footer from "./pages/NavAndFooter/Footer";
 import Contact from "./pages/landing/ContactUs/Contact";
 import About from "./pages/landing/aboutPage/About";
 import Landing from "./pages/landing/landingPage/Landing";
-
-
-import Product from  "./pages/Product/product"
-import ProductFeature from  "./pages/Product/feature"
-
-import NavListMenu from "./pages/NavAndFooter/Nav"
-
-import Cart from "./pages/Product/Cart"
-import CartFeature from "./pages/Product/featureCart"
-import UserProvider from "./pages/Product/ProductContext";
-
 import Product from  "./pages/product/product"
 import ProductFeature from  "./pages/product/feature"
 
-import NavListMenu from "./pages/NavAndFooter/Nav"
+// import NavListMenu from "./pages/NavAndFooter/Nav"
 import Login from "./pages/loginpages/Login";
 import Signup from "./pages/loginpages/Signup";
 import Navbar from "./pages/NavAndFooter/Navbar";
