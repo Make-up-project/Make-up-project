@@ -10,74 +10,20 @@ const Cart = () => {
   const { imgButton, updateValueImgButton } = useContext(UserContext);
   const { Price, updateValuePrice } = useContext(UserContext);
   const { Quantity, updateValueQuantity } = useContext(UserContext);
-  const {myArray,updateApi1 } = useContext(UserContext);
 
-  updateValuePrice(Number(product_Api.price));
+console.log(Price)
+  const [num, setNum] = useState(Number(Quantity));
 
-
-  let numarray=[];
-
-  const [price, setprice] = useState(Number(Price));
-  const [price000, setprice000] = useState([]);
-  const [priceTotal, setpriceTotal] = useState(1);
-  const [priceTotal00, setpriceTotal00] = useState([]);
-
-  function changeNum (i,num,pr){
-
-  numarray[i]=Number(num);
-
-  setpriceTotal00(()=>{
-    return numarray
-  })
-
- 
-  setprice000(()=>{
-    return numarray
-  })
-
-     let sum=0 ;
-    price000.map(value => {
-      sum += Number(value);
-    });
-
-      setpriceTotal(sum)
- 
-      
-    
-     let pricetotal = price000.map(value => {
-        return Number(value) * Number(myArray[i].price)
-      });
-      
-      setpriceTotal00(()=>{
-        return pricetotal
-      })
-
-
- let sumt=0 ;
- pricetotal.map(value => {
-    sumt += Number(value);
-  });
-
-  setpriceTotal(sumt)
-
-
-
-      console.log(priceTotal)
-
-}
-
-
-
- function removeItem(i,name){
-  console.log(name)
-  updateApi1((prevData) => {
-    const newData = prevData.filter(
-      (data) => data.name !== name
-    );
-    return newData
-  });
-
- }
+  function incButton() {
+    setNum((num) + 1);
+    updateValueQuantity((num) + 1);
+  }
+  function decButton() {
+    if (num != 0) {
+      setNum((num) - 1);
+      updateValueQuantity((num) - 1);
+    }
+  }
 
   return (
     <>
@@ -90,20 +36,14 @@ const Cart = () => {
             </p>
           </div>
           <hr />
-          {
 
-
-          myArray.map((e,i) => {
-            numarray.push(1)
-            return(      
           <div className="s1MyCartInfo">
-            
             <div className="CartProductInfo">
-              <img src={e.image} alt="" />
+              <img src={imgButton} alt="" />
               <div className="CartProductInfoText">
-                <p>{e.name}</p>
+                <p>Luxury Matte Lipstick</p>
                 <p>
-                  $<span>{e.price}</span>
+                  $<span>{Price}</span>.00
                 </p>
                 <p>Shades: Lily</p>
               </div>
@@ -111,28 +51,27 @@ const Cart = () => {
 
             <div className="productCartQuantityC">
               <div className="productCartQuantity">
-         
+                <button onClick={() => decButton()} style={{ width: "2rem" }}>
+                  -
+                </button>
                 <input
-                   
-                  onChange={(ev) => changeNum(i,ev.target.value,e.price)}
-                  style={{ width: "5rem" }}
+                  value={Number(num)}
+                  style={{ width: "2rem" }}
                   type="number"
                 />
-              
+                <button onClick={() => incButton()} style={{ width: "2rem" }}>
+                  +
+                </button>
               </div>
 
               <div className="priceCancel">
                 <p>
-                  $<span>{e.price * Number(price000[i])}</span>
+                  $<span>{Price * Quantity}</span>.00
                 </p>
-                <button className="deletebutton" onClick={()=>removeItem(i,e.name)}>X</button>
+                <button>X</button>
               </div>
             </div>
           </div>
-
-          ) })}
-
-
           <hr />
 
           <div className="promeNoteC">
@@ -187,7 +126,7 @@ const Cart = () => {
           <div className="CartSection2Price">
             <p>subtotal</p>
             <p>
-              $<span>{priceTotal}</span>
+              $<span>{Price * Quantity}</span>.00
             </p>
           </div>
 
@@ -198,7 +137,7 @@ const Cart = () => {
           <div className="CartSection2Price">
             <p>total</p>
             <p>
-              <span>{priceTotal}</span>
+              <span>{Price * Quantity}</span>.00
             </p>
           </div>
 

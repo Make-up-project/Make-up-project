@@ -1,51 +1,31 @@
 import React, { useState } from 'react'
 import { Outlet, Link } from 'react-router-dom'
-import product0001 from './images/product0001.jpg'
-import product0002 from './images/product0002.jpg'
-import product0003 from './images/product0003.jpg'
-import product0004 from './images/product0004.jpg'
-import product0005 from './images/product0005.jpg'
-import product0006 from './images/product0006.jpg'
-import product0007 from './images/product0007.jpg'
-import product0008 from './images/product0008.jpg'
+
+
 import "./product.css"
 
 import { useContext } from 'react'
-import { UserContext } from './ProductContext';
-
-
+import { UserContext } from "./ProductContext"
 
 
 
 const Product = () => {
 
 
-  const { product_Api,updateValueProduct_Api } = useContext(UserContext)
+const { product_Api,updateValueProduct_Api } = useContext(UserContext)
 
- 
-
-
-
-
-
+console.log(product_Api)
+  const {myArray,updateApi1 } = useContext(UserContext);
   const { Quantity,updateValueQuantity } = useContext(UserContext)
-  const { imgButton,updateValueImgButton } = useContext(UserContext)
-
   const [colorButton, setcolorButton] = useState("none");
   const  [buttonId ,setButtonId] =useState();
- 
+  const { Price, updateValuePrice } = useContext(UserContext);
 
-let images0=[product0001,product0002,product0003,product0004,product0005,product0006,product0007,product0008]
-
-
-
- 
-
+  updateValuePrice(product_Api.price)
+  
 
 function abyss(i){
   setButtonId(i)
-
-  updateValueImgButton(images0[i])
   setcolorButton("black")
 }
 
@@ -53,31 +33,38 @@ function handleChange(event){
   updateValueQuantity(event.target.value)
 }
 
+const clickHandler1 = () => {
+  updateApi1(oldArray => [...oldArray, product_Api]);
+};
+
+
+
+
 
   return (
     <>
     <div className='productContainer'>
 
  <div className='productSection1 productBox'>
- <img  src={imgButton}  alt=''/>
+ <img  src={product_Api.image}  alt=''/>
 
   <div className='productButtons1'>
     
 
-  {
+  {/* {
     
-      product_Api.product_colors.map((e,i)=>{
+      product_Api.colors.map((e,i)=>{
         return <button style={{background:buttonId===i ? "black" : "none"}} onClick={()=>abyss(i)}  >  </button>
        })
 
-    }
+    } */}
 
   
 
   </div>
 
-   <p>Net Wt. 0.12 oz</p>
-   <p>FREE OF PARABENS OR FRAGRANCE. FORMULATED WITHOUT ALCOHOL,
+   <p className='para'>Net Wt. 0.12 oz</p>
+   <p className='para'>FREE OF PARABENS OR FRAGRANCE. FORMULATED WITHOUT ALCOHOL,
       BARLEY, CORN, OATS, RYE, SOY, SPELT, OR WHEAT. SELECT SHADES ARE
        VEGAN.
        </p>
@@ -88,18 +75,18 @@ function handleChange(event){
 
  <div className='productSection2 productBox'>
 
-  <p className='productNeme'>Luxury Matte Lipstick</p>
-  <p className='productPrice'>$<span>{product_Api.price}</span></p>
+  <p className='productNeme par'>{product_Api.name}</p>
+  <p className='productPrice par'>$<span>{product_Api.price}</span></p>
 
  <div className='producShades'>
- <p>Shades</p>
+ <p className='par'>Shades</p>
     <div className='productButtons2'>
 
     {
   
 
-    product_Api.product_colors.map((e,i)=> {
-      return <button style={{backgroundColor:product_Api.product_colors[i].hex_value}} onClick={()=>abyss(i)}></button>
+    product_Api.colors.map((e,i)=> {
+      return <button style={{backgroundColor:product_Api.colors[i].hex_value}} onClick={()=>abyss(i)}></button>
       })
     
     }
@@ -108,15 +95,14 @@ function handleChange(event){
   </div>
   
 
-  <p>Quantity</p>
+  <p className=' par'>Quantity</p>
   <input type='number' onChange={handleChange} value={Quantity} style={{textAlign:"center"}} />
  
- <Link to="/Cart"><button className='addToCartButton'>Add to Cart</button></Link>
+ <Link to="/Cart"><button onClick={clickHandler1} className='addToCartButton'>Add to Cart</button></Link>
 
 
-    <p className='prodeuctDescription'>Description</p>
- 
-      <p className='prodeuctDescriptionp' >{product_Api.description}</p>
+    <p className='prodeuctDescription para'>Description</p>
+    <p className='prodeuctDescriptionp para' >{product_Api.description}</p>
 
 
  </div>

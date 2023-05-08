@@ -7,25 +7,31 @@ import Contact from "./pages/landing/ContactUs/Contact";
 import About from "./pages/landing/aboutPage/About";
 import Landing from "./pages/landing/landingPage/Landing";
 
-import Product from  "./pages/Product/product"
+import Product from  "./pages/product/product"
+import ProductFeature from  "./pages/product/feature"
+
 import NavListMenu from "./pages/NavAndFooter/Nav"
 import Login from "./pages/loginpages/Login";
 import Signup from "./pages/loginpages/Signup";
-import Cart from "./pages/Product/Cart"
-import UserProvider from "./pages/Product/ProductContext";
+import Navbar from "./pages/NavAndFooter/Navbar";
+import Cart from "./pages/product/Cart"
+import CartFeature from "./pages/product/featureCart"
+import UserProvider from "./pages/product/ProductContext";
 import Store from "./pages/Store/Store";
 function App() {
   return (
     <UserProvider>
     <BrowserRouter>
-       <NavListMenu />  
-     
+      <Navbar/>
       <Routes>
         <Route element={<Landing />} path="/" />
         <Route element={<Product />} path="Product" />
-        <Route element={<Cart />} path="Cart" />
         <Route element={<Login/>} path="Login" />
-       <Route element={<Signup/>} path="Signup" />
+        <Route element={<Signup/>} path="Signup" />
+        <Route element={<ProductFeature />} path="ProductFeature" />
+        <Route element={<Cart />} path="Cart" />
+        <Route element={<CartFeature />} path="CartFeature" />
+
 
         <Route path="/" />
         <Route element={<Landing />} path="Landing" />
