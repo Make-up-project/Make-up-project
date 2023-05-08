@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
-
 import "./product.css";
 
 import { useContext } from "react";
 import { UserContext } from "./ProductContext";
+
+import "./product.css";
 
 const Product = () => {
   const { product_Api, updateValueProduct_Api } = useContext(UserContext);
@@ -12,6 +13,7 @@ const Product = () => {
   console.log(product_Api);
   const { myArray, updateApi1 } = useContext(UserContext);
   const { Quantity, updateValueQuantity } = useContext(UserContext);
+
   const [colorButton, setcolorButton] = useState("none");
   const [buttonId, setButtonId] = useState();
   const { Price, updateValuePrice } = useContext(UserContext);
