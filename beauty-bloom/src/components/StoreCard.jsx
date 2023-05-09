@@ -59,11 +59,15 @@ const StoreCard = (props) => {
             $
             {props.discountValue ? (
               <span>
-                <span className="line-through me-2">{props.price}</span>
-                <span>{(props.price * 20) / 100}</span>
+                <span className="line-through me-2 text-pink-200">
+                  {props.price}
+                </span>
+                <span className="text-pink-200">
+                  {(props.price * 20) / 100}
+                </span>
               </span>
             ) : (
-              <span>{props.price}</span>
+              <span className="text-pink-200">{props.price}</span>
             )}{" "}
           </span>
         </span>
