@@ -27,7 +27,10 @@ const Navbar = () => {
 
   return (
     <div className="w-screen h-[80px] z-10 bg-[#e4e4e7] drop-shadow-lg sticky top-0">
-      <div className="px-2 flex justify-between items-center w-full h-full px-10">
+
+
+      <div className="flex justify-between items-center w-full h-full px-10">
+
         <div className="flex items-center ">
           <div className="w-12">
             <img className="object-cover" src={logomakeup} alt="" />
@@ -114,11 +117,11 @@ const Navbar = () => {
             #
           </Link>
         </li>
-        <div className="flex flex-col my-4">
+        <div className="flex flex-row my-4">
           <button className="buttonNav bg-transparent text-pink-600 px-8 py-3 mb-4">
             <Link to="Login">{signState}</Link>
           </button>
-          <button className="buttonNav px-8 py-3 text-center">
+          <button className="buttonNav px-8 py-3 mb-4 ms-5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
