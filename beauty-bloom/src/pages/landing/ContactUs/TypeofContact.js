@@ -9,7 +9,7 @@ import { mdiEmailFastOutline } from "@mdi/js";
 const TypeofContact = () => {
   return (
     <div className="TypeofContact">
-      <div className="container">
+      <div className="container px-10">
         <div className=" cardd">
           <div className="icon">
             <Icon path={mdiMapMarker} size={2} />

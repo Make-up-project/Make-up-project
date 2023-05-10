@@ -19,17 +19,17 @@ const Form = () => {
   }
 
   return (
-    <div className="bg-[#fbcfe8] py-5">
+    <div className="bg-[#e7a2b3] py-5">
     <form
       
       onSubmit={handleSubmit}
       method="POST"
       target="_blank"
-      className="mx-5 bg-[#fbcfe8]"
+      className="mx-5 bg-[#e7a2b3]"
     >
-        <h1 className="text-4xl mb-3 text-center text-white">keep in touch with us</h1>
-      <div className="flex">
-        <div className="mb-3 pt-0 w-1/2 me-3 ">
+        <h1 className="text-4xl mb-5 text-center text-white">keep in touch with us</h1>
+      <div className="flex flex-col px-8">
+        <div className="mb-5 pt-0 w-full me-3 ">
           <input
             type="text"
             placeholder="Your name"
@@ -38,7 +38,7 @@ const Form = () => {
             required
           />
         </div>
-        <div className="mb-3 pt-0 w-1/2">
+        <div className="mb-5 w-full pt-0">
           <input
             type="email"
             placeholder="Email"
@@ -48,7 +48,7 @@ const Form = () => {
           />
         </div>
       </div>
-      <div className="mb-3 pt-0 ">
+      <div className="mb-3 pt-0 px-8 ">
         <textarea
           placeholder="Your message"
           name="message"
@@ -56,9 +56,9 @@ const Form = () => {
           required
         />
       </div>
-      <div className="mb-3 pt-0">
+      <div className="mb-3 pt-0 px-8">
         <button
-          className="bg-pink-300 w-full text-white active:bg-pink-800 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 "
+          className="bg-[#bc8885] w-full text-white active:bg-[#d498ca] font-bold uppercase text-sm px-6 py-3 rounded shadow hover:bg-[#d498ca] hover:shadow-lg  outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 "
           type="submit"
         >
           Send a message
