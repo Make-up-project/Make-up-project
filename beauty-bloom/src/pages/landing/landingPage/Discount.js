@@ -3,10 +3,10 @@ import StoreCard from "../../../components/StoreCard";
 
 const Discount = () => {
   return (
-    <div>
+    <div className="px-8">
       <h1 className="text-center text-5xl py-5 font-semibold">Discount section</h1>
       <h5 className="text-center mb-7">Discover our new items for limited time</h5>
-      <div className=" grid grid-cols-1 max-w sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-3 px-5">
+      <div className=" grid grid-cols-1 max-w sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-5 mb-6">
         <StoreCard
           imageURL="http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/035/original/open-uri20180630-4-n6wb0y?1530390383"
           name="crame jonson "

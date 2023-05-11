@@ -39,6 +39,7 @@ margin-top: 1rem;
     .AboutUsed .containerr {
         display: flex;
         flex-direction:column; 
+        width: 100%;
   }
   .containerr .text{
     text-align: center;
@@ -46,4 +47,12 @@ margin-top: 1rem;
   }
   .text .icons{
     display: flex;
-    flex-direction: column;}}
+    flex-direction: column;}
+    .aboutP{
+        width: 100%;
+    }
+    .imgAbout{
+        width: 15rem;
+        height: 10rem;
+    }
+}

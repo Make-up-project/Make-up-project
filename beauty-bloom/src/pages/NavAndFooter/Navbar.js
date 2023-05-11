@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { animateScroll as scroll } from "react-scroll";
 import { Link } from "react-router-dom";
 import beautyb from "../Image/beautyb.png";
 import logomakeup from "../Image/logomakeup.png";
@@ -26,10 +25,10 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className="w-screen h-[80px] z-10 bg-[#e4e4e7] drop-shadow-lg sticky top-0">
+    <div className="w-full h-[80px] z-10 bg-[#e4e4e7] drop-shadow-lg sticky top-0">
 
 
-      <div className="flex justify-between items-center w-full h-full px-10">
+      <div className="flex justify-between items-center w-full h-full ps-10">
 
         <div className="flex items-center ">
           <div className="w-12">
@@ -38,22 +37,22 @@ const Navbar = () => {
 
           <ul className="hidden md:flex">
             <Link to="Landing">
-              <li className="liNav" smooth={true} duration={500}>
+              <li className="liNav">
                 Home
               </li>
             </Link>
             <Link to="About">
-              <li className="liNav" smooth={true} offset={-200} duration={500}>
+              <li className="liNav">
                 About
               </li>
             </Link>
             <Link to="Store">
-              <li className="liNav" smooth={true} offset={-50} duration={500}>
+              <li className="liNav" >
                 Store
               </li>
             </Link>
             <Link to="Contact">
-              <li className="liNav" smooth={true} offset={-100} duration={500}>
+              <li className="liNav">
                 {" "}
                 Contact
               </li>
@@ -93,7 +92,7 @@ const Navbar = () => {
 
       <ul className={!nav ? "hidden" : "absolute bg-[#d4d4d8] w-full px-8 z-10"}>
         <li className="liNav border-b-2 border-[#d4d4d8] w-full">
-          <Link to="Landing" smooth={true} duration={500}>
+          <Link to="Landing">
             Home
           </Link>
         </li>
