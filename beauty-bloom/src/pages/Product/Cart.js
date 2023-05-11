@@ -104,7 +104,21 @@ const Cart = () => {
     );
     return newData
   });
+
  }
+
+
+ 
+ function check_login() {
+  if(localStorage.userinfoLog !== null && localStorage.userinfoLog !== undefined){
+    window.location.replace("Checkout")
+
+  }else{
+    window.location.replace("Login")
+    alert("Please login")
+  }
+
+}
 
   return (
     <>
@@ -152,7 +166,7 @@ const Cart = () => {
                 <p>
                   $<span>{e.price*Number(Quantity[i])}</span>
                 </p>
-                <button className="deletebutton" onClick={()=>removeItem(i,e.name,e.price*Number(Quantity[i]),Quantity)  }>X</button>
+                <button className="px-2 py-1 ms-1 buttonNav" onClick={()=>removeItem(i,e.name,e.price*Number(Quantity[i]),Quantity)  }>delete</button>
               </div>
             </div>
           </div>
@@ -228,10 +242,12 @@ const Cart = () => {
               <span>{priceTotalNum}</span>
             </p>
           </div>
+         
 
           <div className="paymentButtons">
-          <Link to="/Checkout"> <button className="checkoutButton ">checkout</button></Link> 
-            <button className="paypalButton">
+           {/* <Link to="/Checkout"></Link>  */}
+           <button onClick={()=>check_login()} className="checkoutButton ">checkout</button>
+            <button className="paypalButton" >
               <span style={{ color: "#003087" }}>pay</span>
               <span style={{ color: "#009CDE" }}>pal</span> checkout
             </button>
