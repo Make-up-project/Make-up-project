@@ -86,6 +86,8 @@ const {signState,updatesignState } = useContext(UserContext);
                         }
                         if(arrEmail.includes(res.data.email)){
                             let userdata = get_info(res.data.email);
+
+
                             alert(userdata.userEmail);
                             alert("welcome");
                             window.location.replace("Landing")
@@ -117,16 +119,16 @@ const {signState,updatesignState } = useContext(UserContext);
     
         if(check_login(email,password) == true) {
            let userdata = get_info(email);
+           localStorage.setItem("userinfoLog",JSON.stringify(userdata))
+
            alert(userdata.userEmail);
         alert("welcome");
         updatesignState("LogOut")
-        localStorage.setItem("userState",JSON.stringify(signState))
+        localStorage.setItem("userState",JSON.stringify("LogOut"))
         window.location.replace("Landing")
         }else{
         alert("Error in username or password.");
         }
-      
-    
 
     }
   return (

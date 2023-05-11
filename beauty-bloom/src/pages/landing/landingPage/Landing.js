@@ -17,6 +17,7 @@ const Landing = () => {
   const {signState,updatesignState } = useContext(UserContext);
   if(localStorage.userState != null){
     updatesignState(JSON.parse(localStorage.userState))
+    console.log(signState)
   }
   return (
     <div>
